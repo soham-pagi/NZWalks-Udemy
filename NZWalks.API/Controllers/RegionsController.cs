@@ -25,7 +25,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        [Authorize(Roles = "Reader,Writer")]
         public async Task<IActionResult> GetAll()
         {
             // Get Data from the Database - Domain models
@@ -37,7 +37,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        [Authorize(Roles = "Reader,Writer")]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
